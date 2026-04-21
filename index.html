@@ -1434,6 +1434,10 @@
   left: unset;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .lf-text-input {
   border: 1px #ccc solid;
   border-radius: 5px;
@@ -2093,6 +2097,19 @@ if (gate.style.display === 'none' || gate.classList.contains('fade-out')) {
     revealMain();
 } else {
     document.body.style.overflow = 'hidden';
+}
+
+/* ================================================================
+   Hide baseon paarum
+================================================================ */
+const params = new URLSearchParams(window.location.search);
+const moodType = params.get('moodType');
+
+if (moodType === 'family') {
+  const rsvpSection = document.getElementById('rsvp-section');
+  if (rsvpSection) {
+    rsvpSection?.classList.add('hidden')
+  }
 }
 
 /* ================================================================
